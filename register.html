@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Registration Page</title>
+</head>
+
+<body>
+    <header>
+        <h1> Dynamic Student Portal </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1> Register </h1>
+        <form action="#" method="post">
+            <p>
+                <label for="fullname"> Full name</label><br>
+                <input type="text" id="fullname" name="fullname" required>
+            </p>
+
+            <p>
+                <label for="email"> Email </label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="dob"> Date of Birth </label><br>
+                <input type="date" id="dob" name=dob required>
+            </p>
+
+            <p>
+                <label for="course"> Course of study </label><br>
+                <select id="course" name="course" required>
+                    <option value=""> Select a value</option>
+                    <option value="computer-science"> Computer Science</option>
+                    <option value="nursing"> Nursing </option>
+                    <option value="business"> Business Administration </option>
+                    <option value="education"> Education </option>
+                    <option value="pharmacy"> Pharmacy </option>
+                </select>
+            </p>
+
+            <fieldset>
+                <legend> Gender </legend>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female"> Female </label>
+
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male"> Male </label>
+
+                <input type="radio" id="other" name="gender" value="other" required>
+                <label for="other"> Other </label>
+            </fieldset>
+
+            <p>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms</label>
+            </p>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <section>
+            <h2> Admission requirements </h2>
+            <ul>
+                <li>Kenya Certificate of Secondary Education (KCSE) result slip or equivalent</li>
+                <li>Copy of national ID or birth certificate</li>
+                <li>Two recent passport-size photographs</li>
+                <li>Completed application form</li>
+                <li>Application fee payment receipt</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2> Registration steps </h2>
+            <ol>
+                <li>Fill in and submit the registration form above</li>
+                <li>Check your email for a confirmation message</li>
+                <li>Upload or present your admission documents</li>
+                <li>Pay the registration fee</li>
+                <li>Collect your student ID and course timetable</li>
+            </ol>
+        </section>
+    </main>
+</body>
+
+</html>
