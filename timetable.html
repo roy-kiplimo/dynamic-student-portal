@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Student Timetable </title>
+    <style>
+        th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1> Dynamic Student Portal </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <table border="1">
+            <caption> Timetable </caption>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th> Monday </th>
+                    <th> Tuesday </th>
+                    <th> Wednesday </th>
+                    <th> Thursday </th>
+                    <th> Friday </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th> 8:00am - 10:00am </th>
+                    <td> MATH 314 (Numerical Analysis) </td>
+                    <td> COMP 312 (Computer Networks) </td>
+                    <td> COMP 311 (Design and Analysis of Algorithms) </td>
+                    <td> </td>
+                    <td rowspan = "5"> WEEKLY RECAP </td>
+                </tr>
+
+                <tr>
+                    <th> 10:00 am - 1:00pm </th>
+                    <td> COMP 310 (Web Application Programming) </td>
+                    <td> </td>
+                    <td> Church Service </td>
+                    <td> </td>
+                </tr>
+
+                <tr>
+                    <th> 1:00pm - 2:00pm </th>
+                    <td colspan="4"> LUNCH TIME </td>
+                </tr>
+
+                <tr>
+                    <th> 2:00pm - 4:00pm </th>
+                    <td> COMP 313 (Software Engineering) </td>
+                    <td> </td>
+                    <td> COMP 315 (Operations Research) </td>
+                    <td> </td>
+                </tr>
+
+                <tr>
+                    <th> 4:00pm - 6:00pm </th>
+                    <td> </td>
+                    <td> MATH 314 (Numerical Analysis) </td>
+                    <td> </td>
+                    <td> BMGT 214 (Business Enterpreneurship) </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>
