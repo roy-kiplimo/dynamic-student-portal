@@ -4,6 +4,14 @@ body {
     color: black;
     padding: 20px;
     margin: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 h1 {
@@ -79,6 +87,15 @@ nav ul {
 
 .home-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 24px;
+}
+
+.home-grid aside {
+    text-align: center;
+}
+
+thead th{
+    background-color: rgb(51, 51, 175);
+    padding: 15px;
 }
