@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Registration Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -91,6 +93,21 @@
             </ol>
         </section>
     </main>
+
+    <footer> ©2026 All Rights Reserved </footer>
+
+    <script>
+        const form = document.querySelector("form");
+        const nameField = document.getElementById("fullname");
+ 
+        form.addEventListener("submit", function (event) {
+            if (nameField.value.trim() === "") {
+                event.preventDefault();
+                alert("Please enter your full name before submitting.");
+                nameField.focus();
+            }
+        });
+    </script>
 </body>
 
 </html>
