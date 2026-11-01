@@ -20,3 +20,26 @@ if (yearOfStudy === 1) {
 for (let i = 1; i <= 5; i++) {
     console.log("Count: " + i);
 }
+
+const students = ["Roy Kiplimo", "Bernard Lucas", "Arnold Kithinji", "Alexandria Tata", "Derrick Kerore"];
+ 
+const studentList = document.getElementById("student-list");
+const showStudentsBtn = document.getElementById("show-students-btn");
+ 
+function addStudentToPage(name) {
+    const item = document.createElement("li");
+    item.textContent = name;
+    studentList.appendChild(item);
+}
+ 
+function displayAllStudents(students) {
+    studentList.innerHTML = ""; 
+ 
+    for (let i = 0; i < students.length; i++) {
+        addStudentToPage(students[i]);
+    }
+}
+ 
+showStudentsBtn.addEventListener("click", function () {
+    displayAllStudents(students);
+});
