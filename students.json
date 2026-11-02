@@ -1,7 +1,7 @@
 [
-    { "name": "Roy Kiplimo", "course": "Computer Science", "year": 3 },
-    { "name": "Bernard Lucas", "course": "Business Administration", "year": 2 },
-    { "name": "Alexandria Tata", "course": "Nursing", "year": 3 },
-    { "name": "Arnold Kithinji", "course": "Education", "year": 4 },
-    { "name": "Derrick Kerore", "course": "Law", "year": 2 }
+    { "name": "Roy Kiplimo", "email": "kiplimoroy3@gmail.com","course": "Computer Science"},
+    { "name": "Bernard Lucas", "email": "lucasben1@gmail.com", "course": "Business Administration"},
+    { "name": "Alexandria Tata", "email": "alextata2@gmail.com", "course": "Nursing"},
+    { "name": "Arnold Kithinji", "email": "kithinjiarnold7@gmail.com", "course": "Education"},
+    { "name": "Derrick Kerore", "email": "kderrick4@gmail.com", "course": "Law"}
 ]

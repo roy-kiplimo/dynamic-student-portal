@@ -26,11 +26,13 @@
             <p>
                 <label for="fullname"> Full name</label><br>
                 <input type="text" id="fullname" name="fullname" required>
+                <span class="error" id="name-error"></span>
             </p>
 
             <p>
                 <label for="email"> Email </label><br>
                 <input type="email" id="email" name="email" required>
+                <span class="error" id="email-error"></span>
             </p>
 
             <p>
@@ -46,7 +48,7 @@
                     <option value="nursing"> Nursing </option>
                     <option value="business"> Business Administration </option>
                     <option value="education"> Education </option>
-                    <option value="pharmacy"> Pharmacy </option>
+                    <option value="law"> Law </option>
                 </select>
             </p>
 
@@ -68,6 +70,7 @@
             </p>
 
             <button type="submit">Register</button>
+            <p id="form-message"></p>
 
         </form>
 
@@ -99,12 +102,46 @@
     <script>
         const form = document.querySelector("form");
         const nameField = document.getElementById("fullname");
+        const emailField = document.getElementById("email");
+        const nameError = document.getElementById("name-error");
+        const emailError = document.getElementById("email-error");
+        const formMessage = document.getElementById("form-message");
+ 
+        const namePattern = /^[A-Za-z\s]+$/;
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  
         form.addEventListener("submit", function (event) {
-            if (nameField.value.trim() === "") {
-                event.preventDefault();
-                alert("Please enter your full name before submitting.");
-                nameField.focus();
+            let isValid = true;
+ 
+            nameError.textContent = "";
+            emailError.textContent = "";
+            formMessage.textContent = "";
+ 
+            const nameValue = nameField.value.trim();
+            const emailValue = emailField.value.trim();
+ 
+            if (nameValue === "") {
+                nameError.textContent = "Full name is required.";
+                isValid = false;
+            } else if (!namePattern.test(nameValue)) {
+                nameError.textContent = "Name can only contain letters and spaces.";
+                isValid = false;
+            }
+ 
+            if (emailValue === "") {
+                emailError.textContent = "Email is required.";
+                isValid = false;
+            } else if (!emailPattern.test(emailValue)) {
+                emailError.textContent = "Please enter a valid email, e.g. name@example.com.";
+                isValid = false;
+            }
+ 
+            event.preventDefault();
+ 
+            if (isValid) {
+                console.log("Valid registration:", nameValue, emailValue);
+                formMessage.textContent = "Thank you, " + nameValue + "! Your registration was received.";
             }
         });
     </script>
