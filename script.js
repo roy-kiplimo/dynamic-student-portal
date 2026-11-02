@@ -4,8 +4,8 @@ window.addEventListener("load", function () {
 
 console.log("script.js loaded successfully");
 
-const studentName = "Roy Kiplimo";
-let yearOfStudy = 2;
+const studentName = "Roy";
+let yearOfStudy = 3;
 
 if (yearOfStudy === 1) {
     console.log("Welcome, " + studentName + "! Enjoy your first year.");
@@ -21,25 +21,47 @@ for (let i = 1; i <= 5; i++) {
     console.log("Count: " + i);
 }
 
-const students = ["Roy Kiplimo", "Bernard Lucas", "Arnold Kithinji", "Alexandria Tata", "Derrick Kerore"];
- 
 const studentList = document.getElementById("student-list");
+const studentCount = document.getElementById("student-count");
 const showStudentsBtn = document.getElementById("show-students-btn");
+const errorMessage = document.getElementById("error-message");
  
-function addStudentToPage(name) {
+function addStudentToPage(student) {
     const item = document.createElement("li");
-    item.textContent = name;
+    item.textContent = student.name + " - " + student.course + " (Year " + student.year + ")";
     studentList.appendChild(item);
 }
  
+function updateStudentCount(count) {
+    studentCount.textContent = "Total registered students: " + count;
+}
+ 
 function displayAllStudents(students) {
-    studentList.innerHTML = ""; 
+    studentList.innerHTML = "";
  
     for (let i = 0; i < students.length; i++) {
         addStudentToPage(students[i]);
     }
+ 
+    updateStudentCount(students.length);
 }
  
-showStudentsBtn.addEventListener("click", function () {
-    displayAllStudents(students);
-});
+async function loadStudents() {
+    errorMessage.textContent = "";
+ 
+    try {
+        const response = await fetch("students.json");
+ 
+         if (!response.ok) {
+            throw new Error("Server responded with status " + response.status);
+        }
+ 
+        const students = await response.json();
+        displayAllStudents(students);
+    } catch (error) {
+        console.error("Failed to load students:", error);
+        errorMessage.textContent = "Sorry, the student list could not be loaded. Please try again later.";
+    }
+}
+ 
+showStudentsBtn.addEventListener("click", loadStudents);
